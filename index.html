@@ -30,6 +30,9 @@
             background-color: #333;
             padding: 50px 20px;
             box-shadow: 0px 0px 20px 0px #fff3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
@@ -38,6 +41,17 @@
         <h1> top ten pics of men
         </h1>
         <p> akpofure is not gay ngl ur </p>
+        <button id="imagething">Click to see image (real) no hacks, legit, 100%, 2023, working</button>
+        <img id="realimagething" style="display: none;" height="300px" src="https://i.pinimg.com/originals/31/ab/9a/31ab9aa2adfceb9d6efb2ee7d97b43dc.jpg" alt="hot man">
     </div>
+
+    <script>
+        var imag = document.getElementById("imagething")
+        var reelimag = document.getElementById("realimagething")
+        imag.addEventListener("click", () => {
+            reelimag.style.display = "block"
+            imag.style.display = "none"
+        })
+    </script>
 </body>
 </html>
