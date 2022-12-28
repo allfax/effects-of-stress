@@ -1,43 +1,34 @@
 <html>
 <head> <link rel="shortcut icon" type="image/x-icon" href="/path/to/favicon.ico">
-  <button id="dark-mode-button">Toggle Dark Mode</button>
-/* Light mode styles */
-body {
-  background-color: #fff;
-  color: #000;
-}
-
-/* Dark mode styles */
-.dark-mode body {
-  background-color: #000;
-  color: #fff;
-}
-const button = document.getElementById("dark-mode-button");
-
-button.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-});
-// Check if the user has previously enabled dark mode
-const darkModeEnabled = localStorage.getItem("dark-mode-enabled");
-
-if (darkModeEnabled === "true") {
-  document.body.classList.add("dark-mode");
-}
-
-function toggleDarkMode() {
-  // Check if the dark mode class is already applied
-  if (document.body.classList.contains("dark-mode")) {
-    // If it is, remove the class and set the dark mode enabled value to false
-    document.body.classList.remove("dark-mode");
-    localStorage.setItem("dark-mode-enabled", "false");
-  } else {
-    // If it's not, add the class and set the dark mode enabled value to true
-    document.body.classList.add("dark-mode");
-    localStorage.setItem("dark-mode-enabled", "true");
-  }
-}
   <title>The Effects of Stress on the Brain</title>
   <style>
+    /* Add the dark mode styles */
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+    .dark-mode a {
+      color: #006699;
+    }
+  </style>
+  <script>
+    function toggleDarkMode() {
+      // Check if the dark mode class exists on the body element
+      if (document.body.classList.contains('dark-mode')) {
+        // Remove the dark mode class
+        document.body.classList.remove('dark-mode');
+      } else {
+        // Add the dark mode class
+        document.body.classList.add('dark-mode');
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Add a toggle button or switch to toggle the dark mode -->
+  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+</body>
+</html>
     /* Add some styles to make the website look nicer */
     body {
       font-family: Arial, sans-serif;
