@@ -1,134 +1,143 @@
-<html>
-<head> <link rel="shortcut icon" type="image/x-icon" href="/path/to/favicon.ico">
-  <title>The Effects of Stress on the Brain</title>
-  <style>
-    /* Add the dark mode styles */
-    .dark-mode {
-      background-color: #333;
-      color: #fff;
-    }
-    .dark-mode a {
-      color: #006699;
-    }
-  </style>
-  <script>
-    function toggleDarkMode() {
-      // Check if the dark mode class exists on the body element
-      if (document.body.classList.contains('dark-mode')) {
-        // Remove the dark mode class
-        document.body.classList.remove('dark-mode');
-      } else {
-        // Add the dark mode class
-        document.body.classList.add('dark-mode');
-      }
-    }
-  </script>
-</head>
-<body>
-  <!-- Add a toggle button or switch to toggle the dark mode -->
-  <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-</body>
-</html>
-    /* Add some styles to make the website look nicer */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
-    }
-    h1, h2 {
-      color: #333;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.5;
-      margin: 0 0 20px;
-    }
-    ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    li {
-      font-size: 16px;
-      margin: 0 0 10px;
-    }
-    a {
-      color: #006699;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    /* Add some styles for the header and navigation */
-    header {
-      background-color: #fff;
-      padding: 20px;
-      border-bottom: 1px solid #ddd;
-    }
-    h1 {
-      margin: 0;
-    }
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #f0f0f0;
-      padding: 0 20px;
-      border-bottom: 1px solid #ddd;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>The Effects of Stress on the Brain</h1>
-  </header>
-  <nav>
-    <ul>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#negative-effects">Negative Effects</a></li>
-      <li><a href="#managing-stress">Managing Stress</a></li>
-      <li><a href="#references">References</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section id="introduction">
-      <h2>Introduction</h2>
-      <p>Stress is a natural response to challenging situations, and it can have both positive and negative effects on the body and mind. When we experience stress, our bodies release hormones such as cortisol and adrenaline, which help us to respond to the perceived threat or challenge. These hormones can have beneficial effects, such as increasing focus and alertness, but they can also have negative effects if they are present in high levels or for prolonged periods of time.</p>
-    </section>
-    <section id="negative-effects">
-      <h2>Negative Effects of Stress on the Brain</h2>
-<p>Chronic or prolonged stress can have negative effects on the brain, including:</p>
-<ul>
-<li>Decreased memory and concentration</li>
-<li>Decreased ability to learn new information</li>
-<li>Increased risk of mental health disorders such as depression and anxiety</li>
-<li>Reduced brain plasticity, or the ability of the brain to adapt and change in response to new experiences</li>
-<li>Increased risk of degenerative brain disorders such as dementia</li>
-</ul>
-</section>
-<section id="managing-stress">
-<h2>Managing Stress</h2>
-<p>There are a number of strategies that can help to manage stress and its negative effects on the brain:</p>
-<ul>
-<li>Exercise and physical activity</li>
-<li>Meditation and mindfulness</li>
-<li>Time management and stress-reducing techniques such as prioritizing tasks and delegating responsibilities</li>
-<li>Maintaining a healthy diet and getting enough sleep</li>
-<li>Seeking support from friends, family, or a mental health professional</li>
-</ul>
-</section>
-<section id="references">
-<h2>References</h2>
-<ul>
-<li>National Institute of Mental Health. (2020). Stress. Retrieved from https://www.nimh.nih.gov/health/topics/stress/index.shtml</li>
-<li>American Psychological Association. (2019). Stress effects on the body. Retrieved from https://www.apa.org/helpcenter/stress-body</li>
-<li>Harvard Health Publishing. (2019). The science of stress. Retrieved from https://www.health.harvard.edu/topics/stress</li>
-</ul>
-</section>
+* {
+	font-family: "Inter", sans-serif;
+	color: #fff;
+}
+img {
+	user-select: none;
+}
+body,
+html {
+	margin: 0;
+	background: #111;
+	overflow-x: hidden;
+}
 
-  </main>
-</body>
-</html>
-```
+a {
+	display: inline-block;
+	padding: 0px;
+	position: relative;
+	color: #84c2ff;
+	text-decoration: none;
+}
+a::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px; /* 100% will cover entire background of text */
+	border-radius: 4px;
+	background-color: #84c2ff;
+	bottom: 0;
+	left: 0;
+}
+a {
+	position: relative;
+}
+a::before {
+	transform-origin: center;
+	transform: scaleX(0);
+	transition: transform 0.3s ease-out;
+}
+a:hover::before {
+	transform-origin: center;
+	transform: scaleX(1);
+}
+
+body :not(#cover-image) {
+	z-index: 999;
+}
+img#cover-image {
+	filter: blur(50px) brightness(0.7) saturate(0.8);
+	min-width: 100%;
+	min-height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+
+#cover {
+	margin: 0;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+#cover .title {
+	margin: 0;
+	font-weight: 300;
+	height: calc(100% - 96px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+#cover .title h1 {
+	font-weight: 300;
+}
+
+@keyframes glow {
+	from {
+		filter: drop-shadow(0px 0px 7px #fff);
+	}
+	to {
+		filter: drop-shadow(0px 0px 5px #fff8);
+	}
+}
+#scrollprompt {
+	opacity: 0.9;
+	filter: drop-shadow(0px 0px 5px #fff);
+	animation-name: glow;
+	animation-duration: 2s;
+	animation-timing-function: ease-in;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+}
+
+#main {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.gray-1 {
+	background-color: #1118;
+}
+.gray-2 {
+	background-color: #2228;
+}
+.gray-3 {
+	background-color: #3338;
+}
+.gray-4 {
+	background-color: #4448;
+}
+
+#main .section {
+	width: calc(100vw - 120px);
+	padding: 50px;
+}
+
+.section h2 {
+	font-weight: 300;
+}
+.section p,
+.section li {
+	font-weight: 200;
+}
+.section li {
+	list-style: none;
+}
+.section li:not(:last-child) {
+	margin-bottom: 7px;
+}
+.section li:before {
+	content: "\2B29";
+	margin-right: 8px;
+}
